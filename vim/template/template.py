@@ -1,4 +1,5 @@
-# Python Template
+#!/usr/bin/python
+# FILENAME
 # @author seblovett
 # @brief A brief description of this code
 
