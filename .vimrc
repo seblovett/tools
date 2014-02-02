@@ -11,7 +11,12 @@ endif
 function! NewFile()
     silent! 0r $HOME/.vim/template/template.%:e
     %s/FILENAME/\=expand("%:t")/g
+    %s/DATECREATED/\=strftime("%c")/g
 endfunction
-
+function! UpdateTime()
+    %s/# Last Edited: .*/# Last Edited: CURDATE/g
+    %s/CURDATE/\=strftime("%c")/g
+endfunction
 autocmd BufNewFile * call NewFile()
+autocmd BufWritePre * call UpdateTime()
 autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb

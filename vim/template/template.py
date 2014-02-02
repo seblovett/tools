@@ -1,5 +1,7 @@
 #!/usr/bin/python
-# FILENAME
+# @file FILENAME
+# Date Created: DATECREATED
+# Last Edited: 
 # @author seblovett
 # @brief A brief description of this code
 
