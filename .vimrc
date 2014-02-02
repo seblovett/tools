@@ -10,13 +10,20 @@ endif
 
 function! NewFile()
     silent! 0r $HOME/.vim/template/template.%:e
-    %s/FILENAME/\=expand("%:t")/g
-    %s/DATECREATED/\=strftime("%c")/g
+    %s/FILENAME/\=expand("%:t")/ge
+    %s/DATECREATED/\=strftime("%c")/ge
 endfunction
+
+" this looks for "Last Edited: " and removes the rest of the line, replaces it with the current system datetime
+"is called when writing file
 function! UpdateTime()
-    %s/# Last Edited: .*/# Last Edited: CURDATE/g
-    %s/CURDATE/\=strftime("%c")/g
+    %s/ Last Edited: .*/ Last Edited: CURDATE/ge
+    %s/CURDATE/\=strftime("%c")/ge
 endfunction
-autocmd BufNewFile * call NewFile()
-autocmd BufWritePre * call UpdateTime()
-autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
+
+" @% contains the file name
+if @% != ".vimrc"
+	autocmd BufNewFile * call NewFile()
+	autocmd BufWritePre * call UpdateTime()
+	autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
+endif
