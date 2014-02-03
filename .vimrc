@@ -10,6 +10,8 @@ endif
 function! NewFile()
     silent! 0r $HOME/.vim/template/template.%:e
     %s/<+FILENAME+>/\=expand("%:t")/ge
+    %s/<+AUTHOR+>/seblovett/ge
+    %s/<+HOSTNAME+>/\=hostname()/ge
     %s/<+DATECREATED+>/\=strftime("%c")/ge
     call UpdateTime()
 endfunction

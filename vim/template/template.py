@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # @file <+FILENAME+>
-# Date Created: <+DATECREATED+>
+# Date Created: <+DATECREATED+> by <+AUTHORNAME+> on <+HOSTNAME+>
 # Last Edited: 
 # @author seblovett
 # @brief A brief description of this code
