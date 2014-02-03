@@ -10,15 +10,17 @@ endif
 
 function! NewFile()
     silent! 0r $HOME/.vim/template/template.%:e
-    %s/FILENAME/\=expand("%:t")/ge
-    %s/DATECREATED/\=strftime("%c")/ge
+    %s/<+FILENAME+>/\=expand("%:t")/ge
+    %s/<+DATECREATED+>/\=strftime("%c")/ge
+    call UpdateTime()
 endfunction
 
-" this looks for "Last Edited: " and removes the rest of the line, replaces it with the current system datetime
+" this looks for "Last Edited:" and removes the rest of the line, replaces it with the current system datetime
 "is called when writing file
 function! UpdateTime()
-    %s/ Last Edited: .*/ Last Edited: CURDATE/ge
-    %s/CURDATE/\=strftime("%c")/ge
+    %s/Last Edited:.*/Last Edited: <+CURDATE+> by seblovett on <+HOSTNAME+>/ge
+    %s/<+CURDATE+>/\=strftime("%c")/ge
+    %s/<+HOSTNAME+>/\=hostname()/ge
 endfunction
 
 " @% contains the file name
