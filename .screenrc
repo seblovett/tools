@@ -1,0 +1,18 @@
+startup_message off
+vbell off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+termcapinfo xterm* ti@:te@
+termcapinfo xterm-color kD=\E[3~
+
+
+screen -t bash
+screen -t report1
+screen -t report2
+screen -t figure
+
+
+# ctrl left and right to prev and next screen
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
