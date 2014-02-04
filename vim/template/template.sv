@@ -6,7 +6,7 @@
 
 module <+FILENAME+> (
 	input logic Clock, nReset, D
-	output logic Q, nQ)
+	output logic Q, nQ);
 
 always_ff @ (posedge Clock or negedge nReset)
 begin
