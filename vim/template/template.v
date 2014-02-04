@@ -5,10 +5,10 @@
 
 
 module <+FILENAMENOEXT+> (
-	input logic Clock, nReset, D,
-	output logic Q, nQ);
+	input wire Clock, nReset, D,
+	output reg Q, nQ);
 
-always_ff @ (posedge Clock or negedge nReset)
+always @ (posedge Clock or negedge nReset)
 begin
 	if(!nReset) //Reset the system
 		Q <= 0;
@@ -18,7 +18,7 @@ begin
 	 end
 end
 
-always_comb
+always @ (*)
  begin
 	nQ = ~Q;
  end

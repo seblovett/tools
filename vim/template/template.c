@@ -1,7 +1,7 @@
 /**
  *  @brief <+FILENAME+>
  *  Date Created: <+DATECREATED+> by <+AUTHORNAME+> on <+HOSTNAME+>
- *  Last Edited: 
+ *  <+Last Edited: +>
  *  @author seblovett
  *  @brief ...
  */

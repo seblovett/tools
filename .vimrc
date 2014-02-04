@@ -10,6 +10,7 @@ endif
 function! NewFile()
     silent! 0r $HOME/.vim/template/template.%:e
     %s/<+FILENAME+>/\=expand("%:t")/ge
+    %s/<+FILENAMENOEXT+>/\=expand("%:r")/ge
     %s/<+AUTHOR+>/seblovett/ge
     %s/<+HOSTNAME+>/\=hostname()/ge
     %s/<+DATECREATED+>/\=strftime("%c")/ge
@@ -20,12 +21,20 @@ endfunction
 "is called when writing file
 function! UpdateTime()
     let l:winview = winsaveview()
-    %s/Last Edited:.*/Last Edited: <+CURDATE+> by seblovett on <+HOSTNAME+>/ge
+    %s/<+Last Edited:.*+>/<+Last Edited: <+CURDATE+> by seblovett on <+HOSTNAME+> +>/ge
     %s/<+CURDATE+>/\=strftime("%c")/ge
     %s/<+HOSTNAME+>/\=hostname()/ge
     call winrestview(l:winview)
 endfunction
 
+" Functions to turn spelling on and off
+function! SpellOn()
+    set spell spelllang=en_gb
+endfunction
+
+function! SpellOff()
+    set nospell
+endfunction
 " @% contains the file name
 if @% != ".vimrc"
 	autocmd BufNewFile * call NewFile()
