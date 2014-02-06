@@ -21,9 +21,10 @@ endfunction
 "is called when writing file
 function! UpdateTime()
     let l:winview = winsaveview()
-    %s/<+Last Edited:.*+>/<+Last Edited: <+CURDATE+> by seblovett on <+HOSTNAME+> +>/ge
+    %s/<+Last Edited:.*+>/<+Last Edited: <+CURDATE+> by <+AUTHOR+> on <+HOSTNAME+> +>/ge
     %s/<+CURDATE+>/\=strftime("%c")/ge
     %s/<+HOSTNAME+>/\=hostname()/ge
+    %s/<+AUTHOR+>/\=$USER/ge
     call winrestview(l:winview)
 endfunction
 
