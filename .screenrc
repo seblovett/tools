@@ -16,3 +16,4 @@ screen -t figure
 # ctrl left and right to prev and next screen
 bindkey ^[[1;5D prev
 bindkey ^[[1;5C next
+bind c stuff "screen -X chdir \$PWD; screen^M"
