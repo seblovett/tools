@@ -1,2 +1,2 @@
-! <+FILENAME+> created by <+AUTHORNAME+> at <+DATECREATED+> on <+HOSTNAME+>
+! <+FILENAME+> created by <+AUTHOR+> at <+DATECREATED+> on <+HOSTNAME+>
 ! <+Last Edited:  +>
