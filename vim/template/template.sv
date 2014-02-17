@@ -8,6 +8,8 @@ module <+FILENAMENOEXT+> (
 	input logic Clock, nReset, D,
 	output logic Q, nQ);
 
+timeunit 1ns; timeprecision 1ps;
+
 always_ff @ (posedge Clock or negedge nReset)
 begin
 	if(!nReset) //Reset the system
