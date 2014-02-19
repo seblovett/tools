@@ -1,0 +1,9 @@
+[core]
+	editor = vim
+[user]
+	name = seblovett
+	email = seblovett@googlemail.com
+[color]
+	ui = true
+[diff]
+	external = git-diff.sh
