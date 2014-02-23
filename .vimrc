@@ -42,3 +42,16 @@ if @% != ".vimrc"
 	autocmd BufWritePre * call UpdateTime()
 	autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
 endif
+
+
+" Cursor colours
+
+" Enable CursorLine
+set cursorline
+" Default Colors for CursorLine
+highlight  CursorLine ctermfg=None
+" Change Color when entering Insert Mode
+autocmd InsertEnter * highlight  CursorLine ctermfg=Blue
+" Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  CursorLine ctermfg=None
+
