@@ -42,11 +42,11 @@ ln ${DIR}/.screenrc .screenrc
 echo ".screenrc set up!"
 
 #Set up .gitconfig
-if [ -f ~/.gitconfig ]; then
-	echo ".gitconfig already exists"
-	#@todo make this interactive
-	rm ~/.gitconfig
-fi
+#if [ -f ~/.gitconfig ]; then
+#	echo ".gitconfig already exists"
+#	#@todo make this interactive
+#	rm ~/.gitconfig
+#fi
 #add the tools dir to path
 #make a backup
 cp .bashrc .bashrc.backup
