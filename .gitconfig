@@ -1,9 +1,13 @@
-[core]
-	editor = vim
 [user]
-	name = seblovett
 	email = seblovett@googlemail.com
+	name = Henry Lovett
 [color]
 	ui = true
-[diff]
+[core]
+	editor = "vim"
+[push]
+	default = simple
+[merge]
+	tool = meld
+[diff] 
 	external = git-diff.sh

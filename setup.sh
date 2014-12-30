@@ -41,6 +41,16 @@ fi
 ln ${DIR}/.screenrc .screenrc
 echo ".screenrc set up!"
 
+if [ -f ~/.gitconfig ]; then
+	echo ".gitconfig already exists"
+	#@todo make this interactive
+	rm .gitconfig
+elif [ -h ~/.gitconfig ]; then
+	rm .gitconfig
+fi
+
+ln ${DIR}/.gitconfig .gitconfig
+echo ".gitconfig set up!"
 #Set up .gitconfig
 #if [ -f ~/.gitconfig ]; then
 #	echo ".gitconfig already exists"
