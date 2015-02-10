@@ -55,3 +55,9 @@ autocmd InsertEnter * highlight  CursorLine ctermfg=Blue
 " Revert Color to default when leaving Insert Mode
 autocmd InsertLeave * highlight  CursorLine ctermfg=None
 
+syntax on
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
